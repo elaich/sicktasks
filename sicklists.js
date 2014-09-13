@@ -10,6 +10,7 @@ var db = mongo.db('mongodb://localhost:27017/tasks', {safe:true})
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:false}))
 
 app.use(express.static(__dirname + '/public'))
 

@@ -4,14 +4,19 @@ html
 	head
 		title= 'Sick Tasks'
 		link(rel='stylesheet', href='/css/style.css')
+		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Dosis')
 	body
-		div.tasks-list
-			h1= 'Sick Tasks'
-			if (tasks.length === 0)
-				| No Tasks
-			ul
-				each task, index in tasks
-					li
-						input(type='checkbox')
-						label=task.text
-		
+		section.tasks-list
+			header#header
+				h1= 'Sick Tasks'
+				input(id="new-task", type="text", autofocus="", placeholder="Anything to do ?")
+			section#main
+				ul
+					each task, index in tasks
+						li
+							input(type='checkbox')
+							label=task.text
+			footer#footer
+				p= 'Footer'
+	script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', type='text/javascript')
+	script(src='/js/main.js', type='text/javascript')
