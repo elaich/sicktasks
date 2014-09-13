@@ -1,0 +1,17 @@
+doctype html
+
+html
+	head
+		title= 'Sick Tasks'
+		link(rel='stylesheet', href='/css/style.css')
+	body
+		div.tasks-list
+			h1= 'Sick Tasks'
+			if (tasks.length === 0)
+				| No Tasks
+			ul
+				each task, index in tasks
+					li
+						input(type='checkbox')
+						label=task.text
+		
