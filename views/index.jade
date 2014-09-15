@@ -12,10 +12,6 @@ html
 				input(id="new-task", type="text", autofocus="", placeholder="Anything to do ?")
 			section#main
 				ul
-					each task, index in tasks
-						li
-							input(type='checkbox')
-							label=task.text
 			footer#footer
 				p= 'Footer'
 	script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', type='text/javascript')

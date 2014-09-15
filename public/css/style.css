@@ -104,6 +104,12 @@ h1 {
 	margin: 0 auto;
 	width: 45px;
 }
+
+#main ul input[type='checkbox']:checked + label {
+	color: #bbb;
+	text-decoration: line-through;
+}
+
 .hidden {
 	display: none;
 }
