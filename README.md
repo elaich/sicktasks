@@ -2,6 +2,10 @@ SickLists ToDo Web Application
 =============================
 
 A simple to-do application, based on a express.js REST api web service connected to a mongo database, consumed by some jQuery code.
+![screenshot1]('http://tinypic.com?ref=20za4c1')
+![screenshot2]('http://tinypic.com?ref=2rpeb88')
+![screenshot3]('http://tinypic.com?ref=rsd2es')
+![screenshot4]('http://tinypic.com?ref=jrxhza')
 
 1) Prerequisites
 ----------------
