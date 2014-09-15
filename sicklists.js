@@ -9,8 +9,8 @@ var db = mongo.db('mongodb://localhost:27017/tasks', {safe:true})
 
 
 app.use(logger('dev'))
+app.use(bodyParser.urlencoded({extended:false})) 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:false}))
 
 app.use(express.static(__dirname + '/public'))
 
@@ -31,6 +31,7 @@ app.get('/', function(req, res, next){
 
 app.post('/tasks', function(req, res, next){
 	req.body.done = false
+	console.info(req.body)
 	req.collection.insert(req.body, function(err, results){
 		if (err) return next(err)
 		res.json(results)
@@ -46,7 +47,6 @@ app.get('/tasks', function(req, res, next){
 
 app.put('/tasks/:id', function(req, res, next){
 	var updated = {$set: (req.body.text)?{text: req.body.text}:{done: req.body.done}}
-
 	req.collection.updateById(req.params.id, updated, function(err, sucess){
 		if(err) return(err)
 		res.json((sucess === 1)?{msg: 'success'}:{msg: 'error'})
